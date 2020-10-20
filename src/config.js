@@ -30,7 +30,7 @@
   reverse: false,
 
   // 类型根据什么字段区分？如果是name，则关闭类型显示
-  divide_by: "type",
+  divide_by: "name",
 
   // 颜色根据什么字段区分？
   divide_color_by: "name",
@@ -38,8 +38,8 @@
   // 字段的值与其对应的颜色值
   // 也可在src/colors.js 中设置
   color: {
-    Chinese: "#1177CC",
-    Japanese: "#667788"
+    1: "#1177CC",
+    2: "#667788",
   },
 
   // 指定一组颜色值，用于自定义所有bar 的配色方案。如果为空则使用默认配置。
@@ -56,11 +56,10 @@
   color_range: ["#ff7e5f", "#feb47b"],
 
   // 附加信息内容。
-  // left label
-  itemLabel: "左侧文字",
+  itemLabel: "当前top1",
 
   // right label
-  typeLabel: "右侧文字",
+  typeLabel: "持续天数",
 
   // 榜首项目信息的水平位置 。
   // Top item information horizontal location
@@ -84,7 +83,7 @@
   // 使用计数器
   // 注意！使用计时器和使用类型目前不能兼容，即不能同时开启！
   // 计数器会出现在右上角，记录着当前榜首的持续时间。
-  use_counter: false,
+  use_counter: true,
   // 每个时间节点对于计数器的步长。
   // 比如时间节点日期的间隔可能为1周（七天），那么step的值就应该为7。
   step: 1,
@@ -94,7 +93,7 @@
   // 这里控制着数值的显示位数。主要靠修改中间的数字完成，如果为1则为保留一位小数。
   // 逗号表示每隔三位数用","分割
   // '.2f' means keeping two decimals.
-  format: ",.0f",
+  format: ",.3f",
 
   // 后缀
   postfix: "",
@@ -170,7 +169,7 @@
   rounded_rectangle: true,
 
   // 是否显示x轴轴线
-  show_x_tick: true,
+  show_x_tick: false,
 
   // 限制bar info 展示的长度
   // limit bar info display length

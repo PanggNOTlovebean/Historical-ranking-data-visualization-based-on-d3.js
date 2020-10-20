@@ -368,9 +368,9 @@ function draw(data) {
       xScale
         .domain([
           2 * d3.min(currentData, xValue) - d3.max(currentData, xValue),
-          d3.max(currentData, xValue) + 10
+          d3.max(currentData, xValue) 
         ])
-        .range([0, innerWidth]);
+        .range([0,innerWidth]);
     } else {
       xScale
         .domain([0, d3.max(currentData, xValue) + 1])
@@ -447,9 +447,9 @@ function draw(data) {
             var i = d3.interpolate(self.textContent, counter.value),
               prec = (counter.value + "").split("."),
               round = prec.length > 1 ? Math.pow(10, prec[1].length) : 1;
-
+              
             return function (t) {
-              self.textContent = d3.format(format)(
+              self.textContent = d3.format(',.0f')(
                 Math.round(i(t) * round) / round
               );
             };
